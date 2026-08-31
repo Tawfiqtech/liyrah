@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liyrah — Modestly Elegant</title>
+<meta name="description" content="Liyrah is a modest wear brand created with love, elegance and purpose. Shop abayas and 3-piece sets, shipped across Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6F1EB;
+  --cream-deep:#EFE7DD;
+  --ink:#4A3A31;
+  --ink-soft:#6B594E;
+  --mauve:#B18C8C;
+  --mauve-deep:#A17E7E;
+  --line:#DCCFC2;
+  --white:#FDFBF8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;font-weight:300;color:var(--ink);background:var(--cream);font-size:15px;line-height:1.7}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Cormorant Garamond',serif}
+.script{font-family:'Parisienne',cursive}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;background:var(--mauve);color:var(--white);font-family:'Jost',sans-serif;font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;transition:background .25s}
+.btn:hover{background:var(--mauve-deep)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--mauve-deep);outline-offset:3px}
+
+/* ── Announcement bar ── */
+.announce{background:#4A382E;color:#EFE2D8;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:10px 16px}
+.announce span{color:var(--mauve)}
+
+/* ── Header ── */
+header{background:var(--cream);padding:26px 0 22px;border-bottom:1px solid var(--line)}
+.header-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+nav.main-nav{display:flex;gap:28px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+nav.main-nav a{position:relative;padding:4px 0}
+nav.main-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--mauve);transition:width .25s}
+nav.main-nav a:hover::after{width:100%}
+.logo{text-align:center}
+.logo .mark{font-size:22px;color:var(--mauve);line-height:1}
+.logo h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;letter-spacing:.32em;margin:2px 0 0;text-indent:.32em}
+.logo .tag{font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;justify-content:center;gap:10px;margin-top:4px}
+.logo .tag::before,.logo .tag::after{content:"";width:22px;height:1px;background:var(--line)}
+.header-icons{display:flex;justify-content:flex-end;gap:20px}
+.header-icons a{display:flex;align-items:center;position:relative}
+.header-icons svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:1.4}
+.cart-count{position:absolute;top:-6px;right:-8px;background:var(--mauve);color:#fff;font-size:9px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer}
+.menu-toggle svg{width:24px;height:24px;stroke:var(--ink);stroke-width:1.5}
+
+/* ── Hero ── */
+.hero{position:relative;min-height:560px;display:flex;align-items:center;justify-content:center;text-align:center;background:
+  linear-gradient(rgba(246,241,235,.55),rgba(246,241,235,.55)),
+  url('images/hero.jpg') center/cover no-repeat, var(--cream-deep)}
+.hero-inner{padding:80px 24px;max-width:640px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px}
+.eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--ink-soft)}
+.hero h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,6.5vw,64px);letter-spacing:.14em;line-height:1.12;text-transform:uppercase}
+.hero .script{font-size:clamp(28px,4vw,40px);color:var(--ink);display:block;margin:10px 0 18px;letter-spacing:.02em;text-transform:none}
+.hero .heart{color:var(--mauve);font-size:20px;margin-bottom:26px}
+
+/* ── Feature strip ── */
+.features{background:var(--cream);padding:52px 0;border-bottom:1px solid var(--line)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.feature{padding:0 20px}
+.feature + .feature{border-left:1px solid var(--line)}
+.feature svg{width:38px;height:38px;stroke:var(--ink);fill:none;stroke-width:1.1;margin:0 auto 14px}
+.feature p{font-size:12px;letter-spacing:.14em;text-transform:uppercase;line-height:1.8}
+
+/* ── Welcome ── */
+.welcome{padding:70px 0}
+.welcome-card{display:grid;grid-template-columns:1fr 1.2fr;background:var(--white);min-height:380px}
+.welcome-text{padding:60px 48px;display:flex;flex-direction:column;justify-content:center}
+.welcome-text h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.welcome-text .rule{width:44px;height:1px;background:var(--mauve);margin:10px 0 24px;position:relative}
+.welcome-text p{margin-bottom:18px;color:var(--ink-soft);max-width:34ch}
+.welcome-img{background:url('images/fabric.jpg') center/cover no-repeat,var(--cream-deep)}
+
+/* ── Categories ── */
+.section-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;letter-spacing:.18em;text-transform:uppercase;text-align:center}
+.section-sub{text-align:center;color:var(--ink-soft);margin-top:8px}
+.categories{padding:10px 0 70px}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:40px}
+.cat-card{position:relative;min-height:420px;display:grid;grid-template-columns:1fr 1fr;background:var(--white);overflow:hidden}
+.cat-img{background:var(--cream-deep) center/cover no-repeat}
+.cat-card.abayas .cat-img{background-image:url('images/cat-abayas.jpg')}
+.cat-card.sets .cat-img{background-image:url('images/cat-sets.jpg')}
+.cat-info{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:32px 20px;gap:14px}
+.cat-info h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;letter-spacing:.16em;text-transform:uppercase}
+.cat-info p{color:var(--ink-soft);font-size:14px;max-width:22ch}
+
+/* ── Products ── */
+.collection{padding:20px 0 70px}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:44px}
+.product{text-align:center}
+.product-img{aspect-ratio:3/4;background:var(--white) center/cover no-repeat;margin-bottom:16px;transition:opacity .25s}
+.product:hover .product-img{opacity:.88}
+.product:nth-child(1) .product-img{background-image:url('images/product-1.jpg')}
+.product:nth-child(2) .product-img{background-image:url('images/product-2.jpg')}
+.product:nth-child(3) .product-img{background-image:url('images/product-3.jpg')}
+.product:nth-child(4) .product-img{background-image:url('images/product-4.jpg')}
+.swatches{display:flex;justify-content:center;gap:8px;margin-bottom:12px}
+.swatch{width:11px;height:11px;border-radius:50%;border:1px solid var(--line)}
+.product h5{font-size:12px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.product .price{font-size:13px;color:var(--ink-soft)}
+.collection .cta-row{text-align:center;margin-top:44px}
+
+/* ── Trust bar ── */
+.trust{background:var(--cream-deep);padding:44px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.trust-item{padding:0 18px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.trust-item + .trust-item{border-left:1px solid var(--line)}
+.trust-item svg{width:32px;height:32px;stroke:var(--ink);fill:none;stroke-width:1.2}
+.trust-item p{font-size:12px;letter-spacing:.12em;text-transform:uppercase;line-height:1.8}
+
+/* ── Newsletter ── */
+.newsletter{padding:64px 0}
+.news-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.news-text h3{font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;margin-bottom:10px}
+.news-text p{color:var(--ink-soft);max-width:42ch}
+.news-form{display:flex;gap:10px}
+.news-form input{flex:1;padding:14px 16px;border:1px solid var(--line);background:var(--white);font-family:'Jost',sans-serif;font-size:14px;color:var(--ink)}
+.news-form input:focus{outline:2px solid var(--mauve);outline-offset:1px}
+.news-note{font-size:12px;color:var(--mauve-deep);margin-top:10px;display:none}
+
+/* ── Footer ── */
+footer{background:var(--cream);border-top:1px solid var(--line);padding:56px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand .mark{color:var(--mauve);font-size:20px}
+.footer-brand h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;letter-spacing:.3em;margin:4px 0 2px}
+.footer-brand .tag{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
+.socials{display:flex;gap:16px;margin-top:18px}
+.socials svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:1.4}
+.footer-col h6{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px;font-size:13px;color:var(--ink-soft)}
+.footer-col a:hover{color:var(--mauve-deep)}
+.pay-badges{display:flex;gap:8px;flex-wrap:wrap}
+.pay-badges span{background:var(--white);border:1px solid var(--line);font-size:11px;font-weight:500;padding:5px 10px;letter-spacing:.02em}
+.copyright{background:#4A382E;color:#EFE2D8;text-align:center;font-size:11px;letter-spacing:.12em;padding:14px;margin-top:48px}
+.copyright span{color:var(--mauve)}
+
+/* ── Responsive ── */
+@media (max-width:900px){
+  .features-grid{grid-template-columns:1fr}
+  .feature + .feature{border-left:none;border-top:1px solid var(--line);padding-top:28px;margin-top:28px}
+  .welcome-card{grid-template-columns:1fr}
+  .welcome-img{min-height:260px;order:-1}
+  .cat-grid{grid-template-columns:1fr}
+  .product-grid{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:28px 0}
+  .trust-item:nth-child(3){border-left:none}
+  .news-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  nav.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;border-bottom:1px solid var(--line);z-index:20}
+  nav.main-nav.open{display:flex}
+  nav.main-nav a{padding:16px 24px;border-top:1px solid var(--line)}
+  .menu-toggle{display:block}
+  header{position:relative}
+  .header-grid{grid-template-columns:auto 1fr auto}
+  .cat-card{grid-template-columns:1fr}
+  .cat-img{min-height:300px}
+  .news-form{flex-direction:column}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">Free shipping on orders over $150 CAD <span>♥</span></div>
+
+<header>
+  <div class="container header-grid">
+    <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#collection">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="logo" id="home">
+      <div class="mark">✦</div>
+      <h1>LIYRAH</h1>
+      <div class="tag">Modestly Elegant</div>
+    </div>
+    <div class="header-icons">
+      <a href="#" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></a>
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg></a>
+      <a href="#" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 7h12l1.5 13h-15L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="cart-count">0</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">First Collection</div>
+    <h2>Discover<br>Modesty,</h2>
+    <span class="script">beautifully made.</span>
+    <div class="heart">♥</div>
+    <a class="btn" href="#collection">Shop the Collection</a>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container features-grid">
+    <div class="feature">
+      <svg viewBox="0 0 24 24"><path d="M12 3l-2 2H7L3 9l3 2v10h12V11l3-2-4-4h-3l-2-2z"/></svg>
+      <p>Abayas &amp;<br>3-Piece Sets</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10"/><path d="M4 10h16M12 10v10M12 10c-3 0-5-1.5-5-3.5S9 4 12 6c3-2 5-.5 5 .5S15 10 12 10z"/></svg>
+      <p>Special Gift<br>With Purchase</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg>
+      <p>First Drop<br>Limited Pieces</p>
+    </div>
+  </div>
+</section>
+
+<section class="welcome" id="about">
+  <div class="container">
+    <div class="welcome-card">
+      <div class="welcome-text">
+        <h3>Welcome to Liyrah</h3>
+        <div class="rule"></div>
+        <p>Liyrah is a modest wear brand created with love, elegance and purpose.</p>
+        <p>Each piece is designed to make you feel confident, comfortable and beautiful in your modesty.</p>
+        <a class="btn" href="#contact">Learn More About Us</a>
+      </div>
+      <div class="welcome-img" role="img" aria-label="Liyrah fabric detail with brand label"></div>
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="container">
+    <h3 class="section-title">Shop by Category</h3>
+    <div class="cat-grid">
+      <div class="cat-card abayas">
+        <div class="cat-img" role="img" aria-label="Black abaya on model"></div>
+        <div class="cat-info">
+          <h4>Abayas</h4>
+          <p>Timeless. Modest. Effortlessly elegant.</p>
+          <a class="btn" href="#collection">Shop Abayas</a>
+        </div>
+      </div>
+      <div class="cat-card sets">
+        <div class="cat-img" role="img" aria-label="Taupe 3-piece set on model"></div>
+        <div class="cat-info">
+          <h4>3-Piece Sets</h4>
+          <p>Coordinated pieces for everyday elegance.</p>
+          <a class="btn" href="#collection">Shop 3-Piece Sets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="collection" id="collection">
+  <div class="container">
+    <h3 class="section-title">First Collection</h3>
+    <p class="section-sub">Our first drop. Limited pieces, made with intention.</p>
+    <div class="product-grid">
+      <a class="product" href="#">
+        <div class="product-img" role="img" aria-label="Classic black abaya"></div>
+        <div class="swatches"><span class="swatch" style="background:#1c1a19"></span><span class="swatch" style="background:#6b5a4e"></span><span class="swatch" style="background:#c9ab97"></span></div>
+        <h5>Classic Abaya</h5>
+        <p class="price">$64.99 CAD</p>
+      </a>
+      <a class="product" href="#">
+        <div class="product-img" role="img" aria-label="Everyday brown abaya"></div>
+        <div class="swatches"><span class="swatch" style="background:#1c1a19"></span><span class="swatch" style="background:#5e4536"></span><span class="swatch" style="background:#b18c8c"></span></div>
+        <h5>Everyday Abaya</h5>
+        <p class="price">$64.99 CAD</p>
+      </a>
+      <a class="product" href="#">
+        <div class="product-img" role="img" aria-label="Timeless taupe 3-piece set"></div>
+        <div class="swatches"><span class="swatch" style="background:#cbb6a4"></span><span class="swatch" style="background:#8f7364"></span><span class="swatch" style="background:#b18c8c"></span></div>
+        <h5>Timeless 3-Piece Set</h5>
+        <p class="price">$79.99 CAD</p>
+      </a>
+      <a class="product" href="#">
+        <div class="product-img" role="img" aria-label="Elegant black 3-piece set"></div>
+        <div class="swatches"><span class="swatch" style="background:#1c1a19"></span><span class="swatch" style="background:#cbb6a4"></span><span class="swatch" style="background:#6b5a4e"></span></div>
+        <h5>Elegant 3-Piece Set</h5>
+        <p class="price">$79.99 CAD</p>
+      </a>
+    </div>
+    <div class="cta-row"><a class="btn" href="#">View All Collection</a></div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container trust-grid">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><rect x="2" y="7" width="13" height="10"/><path d="M15 10h4l3 3v4h-7M6 20a2 2 0 1 0 0-.01M18 20a2 2 0 1 0 0-.01"/></svg>
+      <p>Shipping Across<br>Canada 🍁</p>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.4"/></svg>
+      <p>Secure<br>Checkout</p>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13"/><path d="M3 10h18M6 15h5"/></svg>
+      <p>Easy &amp; Safe<br>Payments</p>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-9-9c-1.2-2.8.6-6 3.7-6 2 0 3.6 1.3 5.3 3.4C13.7 6.3 15.3 5 17.3 5c3.1 0 4.9 3.2 3.7 6-2 4.5-9 9-9 9z"/></svg>
+      <p>Made With Love<br>For You</p>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter" id="contact">
+  <div class="container news-grid">
+    <div class="news-text">
+      <h3>Stay in the Loop</h3>
+      <p>Be the first to know about new drops, exclusive offers and more.</p>
+    </div>
+    <div>
+      <form class="news-form" name="newsletter" method="POST" data-netlify="true" onsubmit="this.nextElementSibling.style.display='block'">
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+      <p class="news-note">Thank you — you're on the list. ♥</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="mark">✦</div>
+      <h4>LIYRAH</h4>
+      <div class="tag">Modestly Elegant</div>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5M14 4c.4 2.4 2 4.2 4.5 4.5"/></svg></a>
+        <a href="mailto:hello@liyrah.ca" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h6>Shop</h6>
+      <ul>
+        <li><a href="#collection">Abayas</a></li>
+        <li><a href="#collection">3-Piece Sets</a></li>
+        <li><a href="#collection">All Products</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h6>Customer Care</h6>
+      <ul>
+        <li><a href="#">Shipping &amp; Delivery</a></li>
+        <li><a href="#">Returns &amp; Exchanges</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h6>About</h6>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#">Size Guide</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h6>We Accept</h6>
+      <div class="pay-badges">
+        <span>VISA</span><span>Mastercard</span><span>Apple Pay</span><span>G Pay</span>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">© 2026 Liyrah. All rights reserved. <span>♥</span></div>
+</footer>
+
+</body>
+</html>
