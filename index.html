@@ -1,179 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Liyrah — Modestly Elegant</title>
-<meta name="description" content="Shop Liyrah Sereen Abayas, Elara Abayas and Bamboo Hijabs — modest pieces designed with elegance, comfort and purpose.">
+<meta name="description" content="Shop Liyrah Sereen and Elara abayas and signature hijabs in Canada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --cream:#F6F1EB; --cream-deep:#EFE7DD; --ink:#4A3A31; --ink-soft:#6B594E;
-  --mauve:#B18C8C; --mauve-deep:#A17E7E; --line:#DCCFC2; --white:#FDFBF8;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;font-weight:300;color:var(--ink);background:var(--cream);font-size:15px;line-height:1.7}
-img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-.btn{display:inline-block;background:var(--ink);color:var(--white);font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:14px 30px;border:1px solid var(--ink);cursor:pointer;transition:.25s}
-.btn:hover{background:var(--mauve-deep);border-color:var(--mauve-deep)}
-.btn-outline{background:transparent;color:var(--ink)}
-.btn-outline:hover{color:var(--white)}
-.announce{background:#4A382E;color:#EFE2D8;text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px}
-header{background:rgba(246,241,235,.96);padding:22px 0 18px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;backdrop-filter:blur(8px)}
-.header-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
-nav.main-nav{display:flex;gap:24px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-nav.main-nav a{position:relative;padding:4px 0}
-nav.main-nav a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--mauve);transition:.25s}
-nav.main-nav a:hover:after{width:100%}
-.logo{text-align:center}.logo h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:36px;letter-spacing:.25em;text-indent:.25em;line-height:1}
-.logo .tag{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
-.header-icons{display:flex;justify-content:flex-end;gap:18px}.header-icons a{display:flex;position:relative}
-.header-icons svg,.menu-toggle svg{width:21px;height:21px;stroke:var(--ink);fill:none;stroke-width:1.4}
-.cart-count{position:absolute;top:-8px;right:-9px;background:var(--ink);color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.menu-toggle{display:none;background:none;border:0;cursor:pointer}
-.hero{position:relative;min-height:680px;display:flex;align-items:flex-end;justify-content:center;text-align:center;background:linear-gradient(0deg,rgba(40,28,22,.55),rgba(40,28,22,.02) 65%),url('images/hero.jpg') center/cover no-repeat,var(--cream-deep);color:white}
-.hero-inner{padding:90px 24px;max-width:780px}
-.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;margin-bottom:15px}
-.hero h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(48px,8vw,82px);letter-spacing:.04em;line-height:.9;text-transform:uppercase}
-.hero p{font-size:15px;max-width:600px;margin:24px auto;color:#fff;letter-spacing:.03em}
-.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.hero .btn{background:var(--white);color:var(--ink);border-color:var(--white)}
-.hero .btn-outline{background:transparent;color:#fff}
-.section-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,5vw,52px);letter-spacing:.08em;text-transform:uppercase;text-align:center}
-.section-sub{text-align:center;color:var(--ink-soft);max-width:680px;margin:10px auto 0}
-.categories{padding:76px 0}
-.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}
-.cat-card{min-height:500px;position:relative;overflow:hidden;background:var(--cream-deep)}
-.cat-img{position:absolute;inset:0;background:center/cover no-repeat;transition:transform .5s}
-.cat-card:hover .cat-img{transform:scale(1.025)}
-.cat-card.sereen .cat-img{background-image:url('images/sereen-category.jpg')}
-.cat-card.elara .cat-img{background-image:url('images/elara-category.jpg')}
-.cat-card.bamboo .cat-img{background-image:url('images/bamboo-category.jpg')}
-.cat-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(45,31,24,.68),transparent 65%);display:flex;align-items:flex-end;justify-content:center;padding:38px 20px;color:white;text-align:center}
-.cat-overlay h3{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
-.cat-overlay p{font-size:13px;margin:5px 0 16px}.cat-overlay a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid white;padding-bottom:4px}
-.collection{padding:76px 0;background:var(--white)}
-.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:30px 0 42px}
-.filter{border:1px solid var(--line);background:transparent;color:var(--ink);padding:10px 18px;font-family:'Jost';font-size:10px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
-.filter.active,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 20px}
-.product{position:relative}.product-img{aspect-ratio:3/4;background:var(--cream-deep) center/cover no-repeat;position:relative;overflow:hidden}
-.product:nth-child(1) .product-img{background-image:url('images/sereen-black.jpg')}
-.product:nth-child(2) .product-img{background-image:url('images/sereen-brown.jpg')}
-.product:nth-child(3) .product-img{background-image:url('images/elara-black.jpg')}
-.product:nth-child(4) .product-img{background-image:url('images/elara-brown.jpg')}
-.product:nth-child(5) .product-img{background-image:url('images/bamboo-neutral.jpg')}
-.product:nth-child(6) .product-img{background-image:url('images/bamboo-dark.jpg')}
-.wish{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(253,251,248,.9);display:grid;place-items:center;border:0;color:var(--ink);font-size:21px;cursor:pointer}
-.product-info{padding:14px 2px}.product-type{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mauve-deep)}
-.product h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;margin:1px 0 2px}.product-desc{font-size:12px;color:var(--ink-soft);margin-bottom:7px}.price{font-size:13px;font-weight:400}
-.swatches{display:flex;gap:7px;margin-top:10px}.swatch{width:12px;height:12px;border-radius:50%;border:1px solid #cfc2b6}
-.cta-row{text-align:center;margin-top:44px}
-.story{padding:82px 0}.story-card{display:grid;grid-template-columns:1fr 1fr;background:var(--cream-deep);min-height:430px}
-.story-img{background:url('images/fabric.jpg') center/cover no-repeat}.story-copy{padding:64px;display:flex;flex-direction:column;justify-content:center}
-.story-copy .eyebrow{color:var(--mauve-deep);margin-bottom:8px}.story-copy h3{font-family:'Cormorant Garamond';font-size:38px;font-weight:500;line-height:1.05;margin-bottom:18px}
-.story-copy p{color:var(--ink-soft);margin-bottom:22px}
-.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}.trust-item{padding:0 18px}.trust-item+.trust-item{border-left:1px solid var(--line)}
-.trust-item strong{display:block;font-family:'Cormorant Garamond';font-size:19px;font-weight:500}.trust-item span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
-.newsletter{padding:68px 0}.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.news-text h3{font-family:'Cormorant Garamond';font-size:31px;font-weight:500}
-.news-text p{color:var(--ink-soft)}.news-form{display:flex}.news-form input{flex:1;padding:14px 16px;border:1px solid var(--line);background:var(--white);font:14px 'Jost'}
-.news-note{font-size:12px;color:var(--mauve-deep);margin-top:10px;display:none}
-footer{border-top:1px solid var(--line);padding:55px 0 0}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px}
-.footer-brand h4{font-family:'Cormorant Garamond';font-size:30px;letter-spacing:.25em;font-weight:500}.footer-brand p{font-size:12px;color:var(--ink-soft);max-width:26ch;margin-top:8px}
-.footer-col h6{font-size:10px;letter-spacing:.17em;text-transform:uppercase;margin-bottom:14px}.footer-col ul{list-style:none}.footer-col li{font-size:13px;color:var(--ink-soft);margin-bottom:9px}
-.copyright{background:#4A382E;color:#EFE2D8;text-align:center;font-size:10px;letter-spacing:.12em;padding:14px;margin-top:45px}
-@media(max-width:900px){.cat-grid{grid-template-columns:1fr 1fr}.cat-card.bamboo{grid-column:1/-1}.product-grid{grid-template-columns:1fr 1fr}.story-card{grid-template-columns:1fr}.story-img{min-height:360px}.trust-grid{grid-template-columns:1fr 1fr;gap:28px 0}.trust-item:nth-child(3){border-left:0}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){
- header{padding:17px 0 14px}.container{padding:0 16px}.header-grid{grid-template-columns:auto 1fr auto}.menu-toggle{display:block}
- nav.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;border-bottom:1px solid var(--line)}
- nav.main-nav.open{display:flex}nav.main-nav a{padding:14px 20px;border-top:1px solid var(--line)}.logo h1{font-size:29px}.logo .tag{display:none}
- .header-icons a:nth-child(1){display:none}.hero{min-height:650px}.hero-inner{padding-bottom:72px}.hero p{font-size:13px}
- .categories,.collection,.story{padding:58px 0}.cat-grid{grid-template-columns:1fr;gap:10px}.cat-card,.cat-card.bamboo{grid-column:auto;min-height:430px}
- .product-grid{grid-template-columns:1fr 1fr;gap:28px 10px}.product h4{font-size:18px}.product-desc{display:none}.wish{width:34px;height:34px}
- .story-copy{padding:42px 28px}.story-copy h3{font-size:32px}.trust-grid{grid-template-columns:1fr 1fr}.news-grid{grid-template-columns:1fr}.news-form{flex-direction:column;gap:8px}.footer-grid{grid-template-columns:1fr 1fr}
-}
+:root{--cream:#f6f1eb;--paper:#fffaf5;--brown:#49372e;--soft:#746157;--mauve:#ad8989;--line:#ded1c5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--brown);font-family:Jost,sans-serif;font-weight:300}
+a{color:inherit;text-decoration:none}img{display:block;width:100%}.wrap{max-width:1240px;margin:auto;padding:0 24px}
+.announce{padding:9px;text-align:center;background:var(--brown);color:#f7eee7;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:rgba(246,241,235,.96);border-bottom:1px solid var(--line)}
+.nav{height:90px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.links{display:flex;gap:26px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.logo{text-align:center;font-family:"Cormorant Garamond",serif;font-size:32px;letter-spacing:.3em;text-indent:.3em}.tag{text-align:center;font-size:8px;letter-spacing:.28em;text-transform:uppercase;margin-top:-6px}.icons{text-align:right;font-size:12px;letter-spacing:.1em}
+.hero{min-height:72vh;display:grid;grid-template-columns:1.05fr .95fr;background:var(--paper)}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px max(28px,7vw)}
+.kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase}.hero h1{font:500 clamp(48px,7vw,82px)/.92 "Cormorant Garamond",serif;margin:18px 0 24px}
+.hero p{max-width:440px;color:var(--soft);line-height:1.8}.hero-img{min-height:620px;background:url("images/sereen-dark-brown.jpg") center 25%/cover no-repeat}
+.btn{display:inline-block;margin-top:18px;padding:14px 26px;background:var(--brown);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;width:max-content}
+.section{padding:82px 0}.title{text-align:center;font:500 38px "Cormorant Garamond",serif;letter-spacing:.08em;margin:0}.sub{text-align:center;color:var(--soft);margin:10px auto 40px}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cat{position:relative;overflow:hidden;background:#eee}.cat img{aspect-ratio:4/5;object-fit:cover;transition:.4s}.cat:hover img{transform:scale(1.015)}
+.cat-label{position:absolute;inset:auto 18px 18px;background:rgba(255,250,245,.92);padding:18px;text-align:center}.cat-label strong{display:block;font:500 24px "Cormorant Garamond",serif}.cat-label span{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}.filter{border:1px solid var(--line);background:transparent;padding:10px 16px;color:var(--brown);cursor:pointer;font:400 10px Jost;letter-spacing:.13em;text-transform:uppercase}.filter.active{background:var(--brown);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 18px}.product{position:relative}.product img{aspect-ratio:2/3;object-fit:cover;background:#eee}.meta{padding:13px 2px}.meta h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:400;margin:0 0 6px}.meta p{font-size:13px;color:var(--soft);margin:0}.colour{font-size:10px!important;letter-spacing:.1em;text-transform:uppercase;margin-top:5px!important}
+.story{background:var(--paper)}.story-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center}.story-img img{height:610px;object-fit:cover}.story-copy{padding:60px 9vw}.story-copy h2{font:500 42px "Cormorant Garamond",serif;margin:0 0 20px}.story-copy p{color:var(--soft);line-height:1.9}
+.trust{padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.trust-grid div+div{border-left:1px solid var(--line)}
+.news{padding:70px 0;text-align:center}.news h2{font:500 32px "Cormorant Garamond",serif}.news form{display:flex;max-width:520px;margin:24px auto}.news input{flex:1;padding:14px;border:1px solid var(--line);background:var(--paper)}.news button{border:0;margin:0}
+footer{background:var(--brown);color:#f6eee8;padding:42px 0;text-align:center}.foot-logo{font:500 28px "Cormorant Garamond",serif;letter-spacing:.3em}.copyright{font-size:10px;letter-spacing:.12em;margin-top:12px;opacity:.75}
+@media(max-width:850px){.links{display:none}.nav{grid-template-columns:1fr auto}.logo{text-align:left}.tag{text-align:left}.hero{grid-template-columns:1fr}.hero-copy{order:2}.hero-img{min-height:68vh}.categories{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-img img{height:auto}.trust-grid{grid-template-columns:1fr 1fr;gap:24px}.trust-grid div+div{border:0}}
+@media(max-width:520px){.wrap{padding:0 14px}.nav{height:72px}.logo{font-size:25px}.hero-copy{padding:48px 24px}.hero-img{min-height:560px}.section{padding:58px 0}.grid{gap:22px 10px}.meta h3{font-size:10px}.news form{flex-direction:column;gap:8px}.news button{width:100%}}
 </style>
 </head>
 <body>
-<div class="announce">Free shipping on orders over $150 CAD ♥</div>
-<header>
- <div class="container header-grid">
-  <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.main-nav').classList.toggle('open')"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-  <nav class="main-nav"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-  <a class="logo" id="home" href="#"><h1>LIYRAH</h1><div class="tag">Modestly Elegant</div></a>
-  <div class="header-icons">
-   <a href="#" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg></a>
-   <a href="#" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></a>
-   <a href="#" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 7h12l1.5 13h-15L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="cart-count">0</span></a>
-  </div>
- </div>
-</header>
+<div class="announce">Liyrah — Modestly Elegant · Shipping Across Canada</div>
+<header><div class="wrap nav">
+<div class="links"><a href="#shop">Shop</a><a href="#abayas">Abayas</a><a href="#hijabs">Hijabs</a><a href="#about">About</a></div>
+<div><div class="logo">LIYRAH</div><div class="tag">Modestly Elegant</div></div>
+<div class="icons">Search &nbsp; ♡ &nbsp; Bag (0)</div>
+</div></header>
 
 <section class="hero">
- <div class="hero-inner">
-  <div class="eyebrow">The Liyrah Collection</div>
-  <h2>Modestly<br>Elegant</h2>
-  <p>Sereen &amp; Elara — crafted in premium Korean Nida and paired with our signature chiffon hijabs.</p>
-  <div class="hero-actions"><a class="btn" href="#shop">Shop Abayas →</a><a class="btn btn-outline" href="#bamboo">Shop Hijabs →</a></div>
- </div>
+<div class="hero-copy"><div class="kicker">The Liyrah Collection</div><h1>Modesty,<br>refined.</h1><p>Sereen and Elara abayas crafted for effortless modesty, paired with our signature hijabs in timeless shades.</p><a class="btn" href="#shop">Shop the Collection →</a></div>
+<div class="hero-img" role="img" aria-label="Liyrah dark brown Sereen abaya"></div>
 </section>
 
-<section class="categories">
- <div class="container">
-  <h2 class="section-title">Shop the Collection</h2>
-  <p class="section-sub">Three signature collections, thoughtfully selected for effortless modesty and timeless elegance.</p>
-  <div class="cat-grid">
-   <a class="cat-card sereen" href="#shop"><div class="cat-img"></div><div class="cat-overlay"><div><h3>Sereen</h3><p>Flowing silhouettes with statement sleeves.</p><span>Shop Sereen →</span></div></div></a>
-   <a class="cat-card elara" href="#shop"><div class="cat-img"></div><div class="cat-overlay"><div><h3>Elara</h3><p>Refined everyday modesty in premium Korean Nida.</p><span>Shop Elara →</span></div></div></a>
-   <a class="cat-card bamboo" href="#bamboo"><div class="cat-img"></div><div class="cat-overlay"><div><h3>Bamboo Hijabs</h3><p>Soft, versatile essentials in curated shades.</p><span>Shop Hijabs →</span></div></div></a>
-  </div>
- </div>
-</section>
+<section class="section" id="shop"><div class="wrap">
+<h2 class="title">Shop the Collection</h2><p class="sub">Timeless silhouettes. Soft drape. Everyday elegance.</p>
+<div class="categories">
+<a class="cat" href="#abayas"><img src="images/sereen-mauve.jpg" alt="Mauve Sereen abaya"><div class="cat-label"><strong>Sereen Abaya</strong><span>Long Sleeve · $70 CAD</span></div></a>
+<a class="cat" href="#abayas"><img src="images/elara-navy.jpg" alt="Navy Elara abaya"><div class="cat-label"><strong>Elara Abaya</strong><span>Short Sleeve · $70 CAD</span></div></a>
+<a class="cat" href="#hijabs"><img src="images/hijab-brown.jpg" alt="Brown Liyrah hijab"><div class="cat-label"><strong>Hijabs</strong><span>Signature Collection · $20 CAD</span></div></a>
+</div></div></section>
 
-<section class="collection" id="shop">
- <div class="container">
-  <h2 class="section-title">New Arrivals</h2>
-  <p class="section-sub">Discover our first Liyrah collection — thoughtfully crafted for modern modest women who value faith, comfort and timeless elegance.</p>
-  <div class="filters">
-   <button class="filter active" data-filter="all">Shop All</button><button class="filter" data-filter="sereen">Sereen</button><button class="filter" data-filter="elara">Elara</button><button class="filter" data-filter="bamboo">Bamboo Hijabs</button>
-  </div>
-  <div class="product-grid">
-   <a class="product" data-cat="sereen" href="#"><div class="product-img"><button class="wish" type="button" aria-label="Save Sereen Black">♡</button></div><div class="product-info"><span class="product-type">Sereen Collection</span><h4>Sereen Abaya — Black</h4><p class="product-desc">Premium Korean Nida · Chiffon hijab included</p><p class="price">$70.00 CAD</p><div class="swatches"><span class="swatch" style="background:#191817"></span><span class="swatch" style="background:#493126"></span><span class="swatch" style="background:#172334"></span></div></div></a>
-   <a class="product" data-cat="sereen" href="#"><div class="product-img"><button class="wish" type="button" aria-label="Save Sereen Brown">♡</button></div><div class="product-info"><span class="product-type">Sereen Collection</span><h4>Sereen Abaya — Dark Brown</h4><p class="product-desc">Premium Korean Nida · Chiffon hijab included</p><p class="price">$70.00 CAD</p><div class="swatches"><span class="swatch" style="background:#493126"></span><span class="swatch" style="background:#191817"></span><span class="swatch" style="background:#172334"></span></div></div></a>
-   <a class="product" data-cat="elara" href="#"><div class="product-img"><button class="wish" type="button" aria-label="Save Elara Black">♡</button></div><div class="product-info"><span class="product-type">Elara Collection</span><h4>Elara Abaya — Black</h4><p class="product-desc">Premium Korean Nida · Chiffon hijab included</p><p class="price">$70.00 CAD</p><div class="swatches"><span class="swatch" style="background:#191817"></span><span class="swatch" style="background:#493126"></span><span class="swatch" style="background:#172334"></span></div></div></a>
-   <a class="product" data-cat="elara" href="#"><div class="product-img"><button class="wish" type="button" aria-label="Save Elara Brown">♡</button></div><div class="product-info"><span class="product-type">Elara Collection</span><h4>Elara Abaya — Dark Brown</h4><p class="product-desc">Premium Korean Nida · Chiffon hijab included</p><p class="price">$70.00 CAD</p><div class="swatches"><span class="swatch" style="background:#493126"></span><span class="swatch" style="background:#191817"></span><span class="swatch" style="background:#172334"></span></div></div></a>
-   <a class="product" id="bamboo" data-cat="bamboo" href="#"><div class="product-img"><button class="wish" type="button" aria-label="Save Bamboo Hijab Neutral">♡</button></div><div class="product-info"><span class="product-type">Bamboo Hijabs</span><h4>Bamboo Hijab — Neutrals</h4><p class="product-desc">Soft everyday hijab · Curated neutral shades</p><p class="price">$20.00 CAD</p><div class="swatches"><span class="swatch" style="background:#d8c7b7"></span><span class="swatch" style="background:#ad8f7d"></span><span class="swatch" style="background:#80685a"></span></div></div></a>
-   <a class="product" data-cat="bamboo" href="#"><div class="product-img"><button class="wish" type="button" aria-label="Save Bamboo Hijab Dark">♡</button></div><div class="product-info"><span class="product-type">Bamboo Hijabs</span><h4>Bamboo Hijab — Deep Tones</h4><p class="product-desc">Soft everyday hijab · Rich versatile shades</p><p class="price">$20.00 CAD</p><div class="swatches"><span class="swatch" style="background:#25211f"></span><span class="swatch" style="background:#44322c"></span><span class="swatch" style="background:#26323b"></span></div></div></a>
-  </div>
-  <div class="cta-row"><a class="btn btn-outline" href="#shop">View All Products</a></div>
- </div>
-</section>
+<section class="section" id="abayas"><div class="wrap">
+<h2 class="title">Abayas</h2><p class="sub">Sereen & Elara · $70.00 CAD</p>
+<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="sereen">Sereen</button><button class="filter" data-filter="elara">Elara</button></div>
+<div class="grid">
+<article class="product" data-kind="sereen"><img src="images/sereen-dark-brown.jpg" alt="Sereen Abaya — Dark Brown"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Dark Brown</p></div></article>
+<article class="product" data-kind="sereen"><img src="images/sereen-mauve.jpg" alt="Sereen Abaya — Mauve"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Mauve</p></div></article>
+<article class="product" data-kind="sereen"><img src="images/sereen-navy.jpg" alt="Sereen Abaya — Navy Blue"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Navy Blue</p></div></article>
+<article class="product" data-kind="sereen"><img src="images/sereen-black.jpg" alt="Sereen Abaya — Black"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Black</p></div></article>
+<article class="product" data-kind="elara"><img src="images/elara-dark-brown.jpg" alt="Elara Abaya — Dark Brown"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Dark Brown</p></div></article>
+<article class="product" data-kind="elara"><img src="images/elara-mauve.jpg" alt="Elara Abaya — Mauve"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Mauve</p></div></article>
+<article class="product" data-kind="elara"><img src="images/elara-navy.jpg" alt="Elara Abaya — Navy Blue"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Navy Blue</p></div></article>
+<article class="product" data-kind="elara"><img src="images/elara-black.jpg" alt="Elara Abaya — Black"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Black</p></div></article>
+</div></div></section>
 
-<section class="story" id="about"><div class="container"><div class="story-card"><div class="story-img"></div><div class="story-copy"><div class="eyebrow">Our Story</div><h3>Created with love, elegance &amp; purpose.</h3><p>Liyrah creates modest pieces designed to make you feel confident, comfortable and beautiful in your modesty. Our collections balance graceful silhouettes, considered fabrics and timeless colour.</p><a class="btn" href="#contact">Discover Liyrah</a></div></div></div></section>
+<section class="section" id="hijabs"><div class="wrap">
+<h2 class="title">Signature Hijabs</h2><p class="sub">$20.00 CAD · Four timeless shades</p><div class="grid">
+<article class="product"><img src="images/hijab-brown.jpg" alt="Liyrah Hijab — Brown"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Brown</p></div></article>
+<article class="product"><img src="images/hijab-mauve.jpg" alt="Liyrah Hijab — Mauve"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Mauve</p></div></article>
+<article class="product"><img src="images/hijab-navy.jpg" alt="Liyrah Hijab — Navy Blue"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Navy Blue</p></div></article>
+<article class="product"><img src="images/hijab-black.jpg" alt="Liyrah Hijab — Black"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Black</p></div></article>
+</div></div></section>
 
-<section class="trust"><div class="container trust-grid">
- <div class="trust-item"><strong>Canada-Wide</strong><span>Shipping</span></div><div class="trust-item"><strong>Secure</strong><span>Checkout</span></div><div class="trust-item"><strong>Thoughtful</strong><span>Modest Design</span></div><div class="trust-item"><strong>Limited</strong><span>First Drop</span></div>
+<section class="story" id="about"><div class="story-grid">
+<div class="story-img"><img src="images/elara-dark-brown.jpg" alt="Dark brown Elara abaya"></div>
+<div class="story-copy"><div class="kicker">Welcome to Liyrah</div><h2>Made with elegance and purpose.</h2><p>Liyrah is a modest wear brand created with love, elegance and purpose. Each piece is designed to feel comfortable, refined and effortless while preserving the beauty of modesty.</p><a class="btn" href="#shop">Explore Liyrah →</a></div>
 </div></section>
 
-<section class="newsletter" id="contact"><div class="container news-grid"><div class="news-text"><h3>Stay in the Liyrah Loop</h3><p>Be first to know about new drops, restocks and exclusive offers.</p></div><div><form class="news-form" name="newsletter" method="POST" data-netlify="true" onsubmit="this.nextElementSibling.style.display='block'"><input type="hidden" name="form-name" value="newsletter"><input type="email" name="email" placeholder="Enter your email" required><button class="btn" type="submit">Subscribe</button></form><p class="news-note">Thank you — you're on the list. ♥</p></div></div></section>
-
-<footer><div class="container footer-grid">
- <div class="footer-brand"><h4>LIYRAH</h4><p>Modestly elegant pieces created with love, elegance and purpose.</p></div>
- <div class="footer-col"><h6>Shop</h6><ul><li><a href="#shop">Sereen Abayas</a></li><li><a href="#shop">Elara Abayas</a></li><li><a href="#bamboo">Bamboo Hijabs</a></li><li><a href="#shop">Shop All</a></li></ul></div>
- <div class="footer-col"><h6>Customer Care</h6><ul><li><a href="#">Shipping &amp; Delivery</a></li><li><a href="#">Returns &amp; Exchanges</a></li><li><a href="#">Size Guide</a></li><li><a href="#">FAQ</a></li></ul></div>
- <div class="footer-col"><h6>About</h6><ul><li><a href="#about">Our Story</a></li><li><a href="#contact">Contact</a></li><li><a href="mailto:hello@liyrah.ca">hello@liyrah.ca</a></li></ul></div>
-</div><div class="copyright">© 2026 Liyrah. All rights reserved. ♥</div></footer>
+<section class="trust"><div class="wrap trust-grid"><div>Premium Materials</div><div>Modest by Design</div><div>Carefully Packed</div><div>Shipping Across Canada</div></div></section>
+<section class="news"><div class="wrap"><h2>Stay in the Liyrah loop</h2><p>Be first to hear about new colours, restocks and future drops.</p><form name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter"><input type="email" name="email" required placeholder="Enter your email"><button class="btn" type="submit">Subscribe</button></form></div></section>
+<footer><div class="wrap"><div class="foot-logo">LIYRAH</div><div class="tag">Modestly Elegant</div><div class="copyright">© 2026 Liyrah. All rights reserved.</div></div></footer>
 
 <script>
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
- const f=btn.dataset.filter;
- document.querySelectorAll('.product').forEach(p=>p.style.display=(f==='all'||p.dataset.cat===f)?'block':'none');
+ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ const f=btn.dataset.filter;document.querySelectorAll('#abayas .product').forEach(p=>p.style.display=(f==='all'||p.dataset.kind===f)?'block':'none');
 }));
-document.querySelectorAll('.wish').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();btn.textContent=btn.textContent==='♡'?'♥':'♡';}));
 </script>
 </body></html>
