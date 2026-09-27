@@ -33,6 +33,19 @@ footer{background:var(--brown);color:#f6eee8;padding:42px 0;text-align:center}.f
 @media(max-width:850px){.links{display:none}.nav{grid-template-columns:1fr auto}.logo{text-align:left}.tag{text-align:left}.hero{grid-template-columns:1fr}.hero-copy{order:2}.hero-img{min-height:68vh}.categories{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-img img{height:auto}.trust-grid{grid-template-columns:1fr 1fr;gap:24px}.trust-grid div+div{border:0}}
 @media(max-width:520px){.wrap{padding:0 14px}.nav{height:72px}.logo{font-size:25px}.hero-copy{padding:48px 24px}.hero-img{min-height:560px}.section{padding:58px 0}.grid{gap:22px 10px}.meta h3{font-size:10px}.news form{flex-direction:column;gap:8px}.news button{width:100%}}
 </style>
+
+<style>
+.hero{position:relative!important;min-height:calc(100vh - 99px)!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;text-align:center!important;background:url("images/liyrah-homepage-hero.jpg") center top/cover no-repeat!important;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(30,20,15,.02),rgba(20,12,10,.32))}
+.hero-copy{position:relative!important;z-index:2;color:#fff!important;display:flex!important;flex-direction:column!important;align-items:center!important;padding:70px 24px 88px!important;width:100%!important}
+.hero .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase}
+.hero h1{font:500 clamp(54px,8vw,94px)/.88 "Cormorant Garamond",serif!important;text-transform:uppercase;margin:20px 0 22px!important}
+.hero p{max-width:620px!important;color:#fff!important;font-size:16px;line-height:1.7;margin:0 auto 10px!important}
+.hero-actions{display:flex;flex-direction:column;gap:12px;width:min(455px,90vw);margin-top:18px}
+.hero-actions .btn{width:100%;margin:0;background:#f7f1eb;color:var(--brown);font-weight:500}
+.hero-actions .btn.alt{background:rgba(54,35,28,.28);color:#fff;border:1px solid rgba(255,255,255,.9)}
+@media(max-width:520px){.hero{min-height:calc(100svh - 81px)!important;background-position:center top!important}.hero-copy{padding:44px 18px 64px!important}.hero h1{font-size:58px!important}.hero p{font-size:14px!important}}
+</style>
 </head>
 <body>
 <div class="announce">Liyrah — Modestly Elegant · Shipping Across Canada</div>
@@ -42,9 +55,16 @@ footer{background:var(--brown);color:#f6eee8;padding:42px 0;text-align:center}.f
 <div class="icons">Search &nbsp; ♡ &nbsp; Bag (0)</div>
 </div></header>
 
-<section class="hero">
-<div class="hero-copy"><div class="kicker">The Liyrah Collection</div><h1>Modesty,<br>refined.</h1><p>Sereen and Elara abayas crafted for effortless modesty, paired with our signature hijabs in timeless shades.</p><a class="btn" href="#shop">Shop the Collection →</a></div>
-<div class="hero-img" role="img" aria-label="Liyrah dark brown Sereen abaya"></div>
+<section class="hero" id="home">
+<div class="hero-copy">
+<div class="kicker">The Liyrah Collection</div>
+<h1>Modestly<br>Elegant</h1>
+<p>Sereen &amp; Elara — crafted in premium Korean Nida and paired with our signature chiffon hijabs.</p>
+<div class="hero-actions">
+<a class="btn" href="#abayas">Shop Abayas →</a>
+<a class="btn alt" href="#hijabs">Shop Hijabs →</a>
+</div>
+</div>
 </section>
 
 <section class="section" id="shop"><div class="wrap">
