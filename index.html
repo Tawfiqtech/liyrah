@@ -46,6 +46,38 @@ footer{background:var(--brown);color:#f6eee8;padding:42px 0;text-align:center}.f
 .hero-actions .btn.alt{background:rgba(54,35,28,.28);color:#fff;border:1px solid rgba(255,255,255,.9)}
 @media(max-width:520px){.hero{min-height:calc(100svh - 81px)!important;background-position:center top!important}.hero-copy{padding:44px 18px 64px!important}.hero h1{font-size:58px!important}.hero p{font-size:14px!important}}
 </style>
+
+<style>
+.hero{
+  position:relative!important;
+  min-height:0!important;
+  height:auto!important;
+  aspect-ratio:864/1416!important;
+  width:100%!important;
+  background-image:url("images/liyrah-homepage-hero.jpg")!important;
+  background-size:100% 100%!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+  align-items:flex-start!important;
+}
+.hero-copy{
+  position:absolute!important;
+  inset:0!important;
+  justify-content:flex-start!important;
+  padding:clamp(70px,18vw,280px) 24px 60px!important;
+}
+@media(max-width:520px){
+  .hero{
+    min-height:0!important;
+    aspect-ratio:864/1416!important;
+    background-size:100% 100%!important;
+    background-position:center center!important;
+  }
+  .hero-copy{
+    padding:clamp(110px,31vw,190px) 18px 42px!important;
+  }
+}
+</style>
 </head>
 <body>
 <div class="announce">Liyrah — Modestly Elegant · Shipping Across Canada</div>
