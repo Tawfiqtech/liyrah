@@ -78,6 +78,24 @@ footer{background:var(--brown);color:#f6eee8;padding:42px 0;text-align:center}.f
   }
 }
 </style>
+
+<style>
+.hero.models-only{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:864/552!important;
+  background:url("images/liyrah-homepage-hero.jpg") center center/100% 100% no-repeat!important;
+}
+.hero.models-only::after{display:none!important}
+@media(max-width:520px){
+  .hero.models-only{
+    min-height:0!important;
+    aspect-ratio:864/552!important;
+    background-size:100% 100%!important;
+  }
+}
+</style>
 </head>
 <body>
 <div class="announce">Liyrah — Modestly Elegant · Shipping Across Canada</div>
@@ -87,17 +105,7 @@ footer{background:var(--brown);color:#f6eee8;padding:42px 0;text-align:center}.f
 <div class="icons">Search &nbsp; ♡ &nbsp; Bag (0)</div>
 </div></header>
 
-<section class="hero" id="home">
-<div class="hero-copy">
-<div class="kicker">The Liyrah Collection</div>
-<h1>Modestly<br>Elegant</h1>
-<p>Sereen &amp; Elara — crafted in premium Korean Nida and paired with our signature chiffon hijabs.</p>
-<div class="hero-actions">
-<a class="btn" href="#abayas">Shop Abayas →</a>
-<a class="btn alt" href="#hijabs">Shop Hijabs →</a>
-</div>
-</div>
-</section>
+<section class="hero models-only" id="home" aria-label="Liyrah models wearing black and taupe abayas"></section>
 
 <section class="section" id="shop"><div class="wrap">
 <h2 class="title">Shop the Collection</h2><p class="sub">Timeless silhouettes. Soft drape. Everyday elegance.</p>
