@@ -1,13 +1,13 @@
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const productData={
  "Sereen Abaya":{
-  description:`<p>The Sereen Abaya is crafted in premium Korean Nida with a wide, straight-cut body for an elegant modest drape. Designed with statement long sleeves and practical hidden details.</p><ul><li>Premium Korean Nida</li><li>16-inch wide long sleeves</li><li>Wide straight-cut body</li><li>Press buttons inside sleeves</li><li>One hidden side pocket</li><li>8-inch chest zip</li><li>Premium Soft Chiffon Hijab included</li></ul>`
+  description:`<p>Crafted from soft Korean Nida fabric, the Sereen Abaya has a relaxed, modest fit designed for graceful everyday wear.</p><ul><li>Soft Korean Nida fabric</li><li>Relaxed, modest fit</li><li>Side pockets</li><li>Matching chiffon hijab included</li><li>8-inch zip down the chest</li></ul>`
  },
  "Elara Abaya":{
-  description:`<p>The Elara Abaya is crafted from soft Korean Nida with a relaxed, modest silhouette designed for everyday elegance and comfortable full coverage.</p><ul><li>Soft Korean Nida</li><li>Relaxed modest fit</li><li>Regular-size sleeves with full arm coverage</li><li>Opaque, smooth drape</li><li>Side pockets</li><li>8-inch chest zip</li><li>Matching chiffon hijab included</li></ul>`
+  description:`<p>The Elara Abaya is designed with a wide straight-cut body and statement sleeves for an elegant, flowing silhouette.</p><ul><li>16-inch wide sleeves</li><li>Wide body, straight cut (31–32 inch)</li><li>Press buttons inside sleeves</li><li>1 hidden side pocket</li><li>8-inch zip down the chest</li><li>Our branded Premium Soft Chiffon Hijab included</li><li>Korean Nida fabric</li></ul>`
  },
  "Bamboo Hijab":{
-  description:`<p>A soft, breathable everyday hijab designed for comfortable coverage and an effortless drape. An easy Liyrah essential for everyday styling.</p><ul><li>Soft breathable fabric</li><li>Lightweight everyday feel</li><li>Generous modest coverage</li><li>Easy to style</li></ul>`
+  description:`<p>Our Bamboo Jersey hijab combines soft stretch, comfortable coverage and a skin-friendly feel for everyday wear.</p><ul><li>Material: 95% bamboo + 5% spandex</li><li>GSM: 150G/ml</li><li>Texture: soft, good stretch, natural and skin-friendly</li><li>Thickness: thick</li><li>Edge: hem wrapped stitching</li><li>Stock size: 70 × 180 cm</li></ul><h4>Care Information</h4><p>Machine wash cold (30°C) on a gentle cycle. Air dry flat or hang dry.</p>`
  }
 };
 let cart=JSON.parse(localStorage.getItem("liyrahCart")||"[]"), photos=[], photoIndex=0, current=null;

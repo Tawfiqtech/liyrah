@@ -107,3 +107,37 @@
 }
 
 .product-card .image-wrap{aspect-ratio:2/3;overflow:hidden;background:#f4eee7}.product-card .image-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
+/* ===== Oct 2026 responsive hero + product detail refinements ===== */
+.section-head > span{display:none!important}
+
+/* Desktop/laptop: wider cinematic hero */
+@media (min-width:851px){
+  .hero{height:clamp(620px,72vh,790px);min-height:0}
+  .hero-photo{background-size:cover;background-position:center 46%;transform:none!important}
+  .hero-content{top:52%;transform:translate(-50%,-20%)}
+}
+
+/* Phones/tablets: portrait-style framing and tighter content so nothing spills below hero */
+@media (max-width:850px){
+  .hero{height:calc(100svh - 102px);min-height:640px;max-height:900px}
+  .hero-photo{background-size:auto 100%;background-position:center center;background-repeat:no-repeat;transform:none!important;background-color:#b49582}
+  .hero-content{top:49%;transform:translate(-50%,-8%);width:92%}
+  .hero-content>p{font-size:11px;letter-spacing:.31em;margin-bottom:16px}
+  .hero-content h1{font-size:clamp(50px,13vw,76px);margin-bottom:17px}
+  .hero-sub{font-size:13px;line-height:1.5;margin-bottom:17px}
+  .hero-btn{height:54px;margin-top:9px}
+  .hero-dots{bottom:18px}
+}
+@media (max-width:520px){
+  .hero{height:calc(100svh - 82px);min-height:610px}
+  .hero-photo{background-size:auto 100%;background-position:center center}
+  .hero-content{top:48%;transform:translate(-50%,-4%)}
+  .hero-content h1{font-size:clamp(46px,14vw,64px)}
+  .hero-sub{font-size:12px;line-height:1.45;max-width:350px}
+  .hero-btn{height:50px;width:82%}
+}
+
+.description{max-width:1000px}
+.description p{line-height:1.7}
+.description ul{padding-left:20px;line-height:1.55}
+.description h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:28px 0 10px}
