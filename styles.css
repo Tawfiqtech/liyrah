@@ -66,3 +66,42 @@
   .hero-content h1{font-size:clamp(48px,14vw,66px);margin-bottom:18px}
   .hero-sub{font-size:12px;margin-bottom:18px}.hero-btn{height:52px;font-size:12px}
 }
+
+/* ===== FINAL CLEAN DESKTOP HERO ===== */
+.hero{
+  height:min(820px,calc(100vh - 125px));
+  min-height:620px;
+  position:relative;
+  overflow:hidden;
+  background:#c8aa96;
+}
+.hero-photo{
+  position:absolute;inset:0;
+  background:url("images/hero-desktop.jpg") center center/cover no-repeat;
+  transform:none !important;
+}
+.hero:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(20,12,8,.02) 10%,rgba(20,12,8,.08) 42%,rgba(20,12,8,.32) 100%);
+  pointer-events:none
+}
+.hero-content{
+  position:absolute;z-index:3;left:50%;top:54%;
+  transform:translate(-50%,-25%);
+  width:min(760px,90%);text-align:center;color:#fff;
+}
+.hero-content>p{font-size:15px;letter-spacing:.34em;margin:0 0 18px;font-weight:500}
+.hero-content h1{
+  font-family:"Italiana",serif;font-size:clamp(64px,6.3vw,100px);
+  line-height:.91;font-weight:400;letter-spacing:-.015em;margin:0 0 22px;
+}
+.hero-sub{font-size:16px;line-height:1.55;margin:0 auto 26px;max-width:620px}
+.hero-btn{width:min(520px,82%);height:62px;margin:11px auto 0}
+.hero-dots{bottom:24px}
+.product-card .image-wrap img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+@media(max-width:850px){
+ .hero{height:calc(100svh - 102px);min-height:700px}
+ .hero-photo{background-position:center center;transform:none!important}
+ .hero-content{top:53%;transform:translate(-50%,-12%)}
+ .hero-content h1{font-size:clamp(54px,13vw,78px)}
+}
