@@ -1,155 +1,159 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Liyrah — Modestly Elegant</title>
-<meta name="description" content="Shop Liyrah Sereen and Elara abayas and signature hijabs in Canada.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{--cream:#f6f1eb;--paper:#fffaf5;--brown:#49372e;--soft:#746157;--mauve:#ad8989;--line:#ded1c5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--brown);font-family:Jost,sans-serif;font-weight:300}
-a{color:inherit;text-decoration:none}img{display:block;width:100%}.wrap{max-width:1240px;margin:auto;padding:0 24px}
-.announce{padding:9px;text-align:center;background:var(--brown);color:#f7eee7;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-header{position:sticky;top:0;z-index:20;background:rgba(246,241,235,.96);border-bottom:1px solid var(--line)}
-.nav{height:90px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.links{display:flex;gap:26px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-.logo{text-align:center;font-family:"Cormorant Garamond",serif;font-size:32px;letter-spacing:.3em;text-indent:.3em}.tag{text-align:center;font-size:8px;letter-spacing:.28em;text-transform:uppercase;margin-top:-6px}.icons{text-align:right;font-size:12px;letter-spacing:.1em}
-.hero{min-height:72vh;display:grid;grid-template-columns:1.05fr .95fr;background:var(--paper)}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px max(28px,7vw)}
-.kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase}.hero h1{font:500 clamp(48px,7vw,82px)/.92 "Cormorant Garamond",serif;margin:18px 0 24px}
-.hero p{max-width:440px;color:var(--soft);line-height:1.8}.hero-img{min-height:620px;background:url("images/sereen-dark-brown.jpg") center 25%/cover no-repeat}
-.btn{display:inline-block;margin-top:18px;padding:14px 26px;background:var(--brown);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;width:max-content}
-.section{padding:82px 0}.title{text-align:center;font:500 38px "Cormorant Garamond",serif;letter-spacing:.08em;margin:0}.sub{text-align:center;color:var(--soft);margin:10px auto 40px}
-.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cat{position:relative;overflow:hidden;background:#eee}.cat img{aspect-ratio:4/5;object-fit:cover;transition:.4s}.cat:hover img{transform:scale(1.015)}
-.cat-label{position:absolute;inset:auto 18px 18px;background:rgba(255,250,245,.92);padding:18px;text-align:center}.cat-label strong{display:block;font:500 24px "Cormorant Garamond",serif}.cat-label span{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}.filter{border:1px solid var(--line);background:transparent;padding:10px 16px;color:var(--brown);cursor:pointer;font:400 10px Jost;letter-spacing:.13em;text-transform:uppercase}.filter.active{background:var(--brown);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 18px}.product{position:relative}.product img{aspect-ratio:2/3;object-fit:cover;background:#eee}.meta{padding:13px 2px}.meta h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:400;margin:0 0 6px}.meta p{font-size:13px;color:var(--soft);margin:0}.colour{font-size:10px!important;letter-spacing:.1em;text-transform:uppercase;margin-top:5px!important}
-.story{background:var(--paper)}.story-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center}.story-img img{height:610px;object-fit:cover}.story-copy{padding:60px 9vw}.story-copy h2{font:500 42px "Cormorant Garamond",serif;margin:0 0 20px}.story-copy p{color:var(--soft);line-height:1.9}
-.trust{padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.trust-grid div+div{border-left:1px solid var(--line)}
-.news{padding:70px 0;text-align:center}.news h2{font:500 32px "Cormorant Garamond",serif}.news form{display:flex;max-width:520px;margin:24px auto}.news input{flex:1;padding:14px;border:1px solid var(--line);background:var(--paper)}.news button{border:0;margin:0}
-footer{background:var(--brown);color:#f6eee8;padding:42px 0;text-align:center}.foot-logo{font:500 28px "Cormorant Garamond",serif;letter-spacing:.3em}.copyright{font-size:10px;letter-spacing:.12em;margin-top:12px;opacity:.75}
-@media(max-width:850px){.links{display:none}.nav{grid-template-columns:1fr auto}.logo{text-align:left}.tag{text-align:left}.hero{grid-template-columns:1fr}.hero-copy{order:2}.hero-img{min-height:68vh}.categories{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-img img{height:auto}.trust-grid{grid-template-columns:1fr 1fr;gap:24px}.trust-grid div+div{border:0}}
-@media(max-width:520px){.wrap{padding:0 14px}.nav{height:72px}.logo{font-size:25px}.hero-copy{padding:48px 24px}.hero-img{min-height:560px}.section{padding:58px 0}.grid{gap:22px 10px}.meta h3{font-size:10px}.news form{flex-direction:column;gap:8px}.news button{width:100%}}
-</style>
-
-<style>
-.hero{position:relative!important;min-height:calc(100vh - 99px)!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;text-align:center!important;background:url("images/liyrah-homepage-hero.jpg") center top/cover no-repeat!important;overflow:hidden}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(30,20,15,.02),rgba(20,12,10,.32))}
-.hero-copy{position:relative!important;z-index:2;color:#fff!important;display:flex!important;flex-direction:column!important;align-items:center!important;padding:70px 24px 88px!important;width:100%!important}
-.hero .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase}
-.hero h1{font:500 clamp(54px,8vw,94px)/.88 "Cormorant Garamond",serif!important;text-transform:uppercase;margin:20px 0 22px!important}
-.hero p{max-width:620px!important;color:#fff!important;font-size:16px;line-height:1.7;margin:0 auto 10px!important}
-.hero-actions{display:flex;flex-direction:column;gap:12px;width:min(455px,90vw);margin-top:18px}
-.hero-actions .btn{width:100%;margin:0;background:#f7f1eb;color:var(--brown);font-weight:500}
-.hero-actions .btn.alt{background:rgba(54,35,28,.28);color:#fff;border:1px solid rgba(255,255,255,.9)}
-@media(max-width:520px){.hero{min-height:calc(100svh - 81px)!important;background-position:center top!important}.hero-copy{padding:44px 18px 64px!important}.hero h1{font-size:58px!important}.hero p{font-size:14px!important}}
-</style>
-
-<style>
-.hero{
-  position:relative!important;
-  min-height:0!important;
-  height:auto!important;
-  aspect-ratio:864/1416!important;
-  width:100%!important;
-  background-image:url("images/liyrah-homepage-hero.jpg")!important;
-  background-size:100% 100%!important;
-  background-position:center center!important;
-  background-repeat:no-repeat!important;
-  align-items:flex-start!important;
-}
-.hero-copy{
-  position:absolute!important;
-  inset:0!important;
-  justify-content:flex-start!important;
-  padding:clamp(70px,18vw,280px) 24px 60px!important;
-}
-@media(max-width:520px){
-  .hero{
-    min-height:0!important;
-    aspect-ratio:864/1416!important;
-    background-size:100% 100%!important;
-    background-position:center center!important;
-  }
-  .hero-copy{
-    padding:clamp(110px,31vw,190px) 18px 42px!important;
-  }
-}
-</style>
-
-<style>
-.hero.models-only{
-  width:100%!important;
-  height:auto!important;
-  min-height:0!important;
-  aspect-ratio:864/552!important;
-  background:url("images/liyrah-homepage-hero.jpg") center center/100% 100% no-repeat!important;
-}
-.hero.models-only::after{display:none!important}
-@media(max-width:520px){
-  .hero.models-only{
-    min-height:0!important;
-    aspect-ratio:864/552!important;
-    background-size:100% 100%!important;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LIYRAH — Modestly Elegant</title>
+  <meta name="description" content="Liyrah modest wear — Sereen and Elara abayas and hijabs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="announce">Liyrah — Modestly Elegant · Shipping Across Canada</div>
-<header><div class="wrap nav">
-<div class="links"><a href="#shop">Shop</a><a href="#abayas">Abayas</a><a href="#hijabs">Hijabs</a><a href="#about">About</a></div>
-<div><div class="logo">LIYRAH</div><div class="tag">Modestly Elegant</div></div>
-<div class="icons">Search &nbsp; ♡ &nbsp; Bag (0)</div>
-</div></header>
+<div class="announcement">FREE LOCAL DELIVERY ON ORDERS OVER $100 CAD</div>
 
-<section class="hero models-only" id="home" aria-label="Liyrah models wearing black and taupe abayas"></section>
+<header class="site-header">
+  <button class="icon menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  <a class="logo" href="#home">LIYRAH<span>MODESTY REFINED</span></a>
+  <nav id="nav">
+    <a href="#abayas">ABAYAS</a>
+    <a href="#sereen">SEREEN</a>
+    <a href="#elara">ELARA</a>
+    <a href="#hijabs">HIJABS</a>
+  </nav>
+  <button class="icon bag-btn" id="bagBtn">BAG <span id="cartCount">0</span></button>
+</header>
 
-<section class="section" id="shop"><div class="wrap">
-<h2 class="title">Shop the Collection</h2><p class="sub">Timeless silhouettes. Soft drape. Everyday elegance.</p>
-<div class="categories">
-<a class="cat" href="#abayas"><img src="images/sereen-mauve.jpg" alt="Mauve Sereen abaya"><div class="cat-label"><strong>Sereen Abaya</strong><span>Long Sleeve · $70 CAD</span></div></a>
-<a class="cat" href="#abayas"><img src="images/elara-navy.jpg" alt="Navy Elara abaya"><div class="cat-label"><strong>Elara Abaya</strong><span>Short Sleeve · $70 CAD</span></div></a>
-<a class="cat" href="#hijabs"><img src="images/hijab-brown.jpg" alt="Brown Liyrah hijab"><div class="cat-label"><strong>Hijabs</strong><span>Signature Collection · $20 CAD</span></div></a>
-</div></div></section>
+<section class="hero" id="home">
+  <img src="images/liyrah-hero.jpeg" alt="The Liyrah Collection" class="hero-image">
+  <div class="hero-links">
+    <a href="#abayas" aria-label="Shop abayas"></a>
+    <a href="#hijabs" aria-label="Shop hijabs"></a>
+  </div>
+</section>
 
-<section class="section" id="abayas"><div class="wrap">
-<h2 class="title">Abayas</h2><p class="sub">Sereen & Elara · $70.00 CAD</p>
-<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="sereen">Sereen</button><button class="filter" data-filter="elara">Elara</button></div>
-<div class="grid">
-<article class="product" data-kind="sereen"><img src="images/sereen-dark-brown.jpg" alt="Sereen Abaya — Dark Brown"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Dark Brown</p></div></article>
-<article class="product" data-kind="sereen"><img src="images/sereen-mauve.jpg" alt="Sereen Abaya — Mauve"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Mauve</p></div></article>
-<article class="product" data-kind="sereen"><img src="images/sereen-navy.jpg" alt="Sereen Abaya — Navy Blue"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Navy Blue</p></div></article>
-<article class="product" data-kind="sereen"><img src="images/sereen-black.jpg" alt="Sereen Abaya — Black"><div class="meta"><h3>Sereen Abaya</h3><p>$70.00 CAD</p><p class="colour">Black</p></div></article>
-<article class="product" data-kind="elara"><img src="images/elara-dark-brown.jpg" alt="Elara Abaya — Dark Brown"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Dark Brown</p></div></article>
-<article class="product" data-kind="elara"><img src="images/elara-mauve.jpg" alt="Elara Abaya — Mauve"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Mauve</p></div></article>
-<article class="product" data-kind="elara"><img src="images/elara-navy.jpg" alt="Elara Abaya — Navy Blue"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Navy Blue</p></div></article>
-<article class="product" data-kind="elara"><img src="images/elara-black.jpg" alt="Elara Abaya — Black"><div class="meta"><h3>Elara Abaya</h3><p>$70.00 CAD</p><p class="colour">Black</p></div></article>
-</div></div></section>
+<main>
+  <section class="intro" id="abayas">
+    <p class="eyebrow">THE LIYRAH COLLECTION</p>
+    <h1>Shop Abayas</h1>
+    <p>Premium modest essentials crafted for graceful everyday wear.</p>
+  </section>
 
-<section class="section" id="hijabs"><div class="wrap">
-<h2 class="title">Signature Hijabs</h2><p class="sub">$20.00 CAD · Four timeless shades</p><div class="grid">
-<article class="product"><img src="images/hijab-brown.jpg" alt="Liyrah Hijab — Brown"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Brown</p></div></article>
-<article class="product"><img src="images/hijab-mauve.jpg" alt="Liyrah Hijab — Mauve"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Mauve</p></div></article>
-<article class="product"><img src="images/hijab-navy.jpg" alt="Liyrah Hijab — Navy Blue"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Navy Blue</p></div></article>
-<article class="product"><img src="images/hijab-black.jpg" alt="Liyrah Hijab — Black"><div class="meta"><h3>Liyrah Hijab</h3><p>$20.00 CAD</p><p class="colour">Black</p></div></article>
-</div></div></section>
+  <section class="collection" id="sereen">
+    <div class="section-head">
+      <div><p class="eyebrow">01 / ABAYAS</p><h2>Sereen Abaya</h2><p>Wide long sleeves with a graceful, flowing silhouette.</p></div>
+      <span>$70 CAD</span>
+    </div>
+    <div class="product-grid">
+      <article class="product-card" data-product="Sereen Abaya" data-color="Dark Brown" data-price="70" data-image="images/sereen-brown.jpeg">
+        <div class="image-wrap"><img src="images/sereen-brown.jpeg" alt="Sereen Abaya Dark Brown"></div><h3>Sereen Abaya</h3><p>Dark Brown</p><strong>$70 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Sereen Abaya" data-color="Mauve" data-price="70" data-image="images/sereen-mauve.jpeg">
+        <div class="image-wrap"><img src="images/sereen-mauve.jpeg" alt="Sereen Abaya Mauve"></div><h3>Sereen Abaya</h3><p>Mauve</p><strong>$70 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Sereen Abaya" data-color="Navy Blue" data-price="70" data-image="images/sereen-navy.jpeg">
+        <div class="image-wrap"><img src="images/sereen-navy.jpeg" alt="Sereen Abaya Navy Blue"></div><h3>Sereen Abaya</h3><p>Navy Blue</p><strong>$70 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Sereen Abaya" data-color="Black" data-price="70" data-image="images/sereen-black.jpeg">
+        <div class="image-wrap"><img src="images/sereen-black.jpeg" alt="Sereen Abaya Black"></div><h3>Sereen Abaya</h3><p>Black</p><strong>$70 CAD</strong>
+      </article>
+    </div>
+  </section>
 
-<section class="story" id="about"><div class="story-grid">
-<div class="story-img"><img src="images/elara-dark-brown.jpg" alt="Dark brown Elara abaya"></div>
-<div class="story-copy"><div class="kicker">Welcome to Liyrah</div><h2>Made with elegance and purpose.</h2><p>Liyrah is a modest wear brand created with love, elegance and purpose. Each piece is designed to feel comfortable, refined and effortless while preserving the beauty of modesty.</p><a class="btn" href="#shop">Explore Liyrah →</a></div>
-</div></section>
+  <section class="collection" id="elara">
+    <div class="section-head">
+      <div><p class="eyebrow">02 / ABAYAS</p><h2>Elara Abaya</h2><p>A relaxed modest silhouette for understated everyday wear.</p></div>
+      <span>$70 CAD</span>
+    </div>
+    <div class="product-grid">
+      <article class="product-card" data-product="Elara Abaya" data-color="Dark Brown" data-price="70" data-image="images/elara-brown.jpeg">
+        <div class="image-wrap"><img src="images/elara-brown.jpeg" alt="Elara Abaya Dark Brown"></div><h3>Elara Abaya</h3><p>Dark Brown</p><strong>$70 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Elara Abaya" data-color="Mauve" data-price="70" data-image="images/elara-mauve.jpeg">
+        <div class="image-wrap"><img src="images/elara-mauve.jpeg" alt="Elara Abaya Mauve"></div><h3>Elara Abaya</h3><p>Mauve</p><strong>$70 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Elara Abaya" data-color="Navy Blue" data-price="70" data-image="images/elara-navy.jpeg">
+        <div class="image-wrap"><img src="images/elara-navy.jpeg" alt="Elara Abaya Navy Blue"></div><h3>Elara Abaya</h3><p>Navy Blue</p><strong>$70 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Elara Abaya" data-color="Black" data-price="70" data-image="images/elara-black.jpeg">
+        <div class="image-wrap"><img src="images/elara-black.jpeg" alt="Elara Abaya Black"></div><h3>Elara Abaya</h3><p>Black</p><strong>$70 CAD</strong>
+      </article>
+    </div>
+  </section>
 
-<section class="trust"><div class="wrap trust-grid"><div>Premium Materials</div><div>Modest by Design</div><div>Carefully Packed</div><div>Shipping Across Canada</div></div></section>
-<section class="news"><div class="wrap"><h2>Stay in the Liyrah loop</h2><p>Be first to hear about new colours, restocks and future drops.</p><form name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter"><input type="email" name="email" required placeholder="Enter your email"><button class="btn" type="submit">Subscribe</button></form></div></section>
-<footer><div class="wrap"><div class="foot-logo">LIYRAH</div><div class="tag">Modestly Elegant</div><div class="copyright">© 2026 Liyrah. All rights reserved.</div></div></footer>
+  <section class="collection" id="hijabs">
+    <div class="section-head">
+      <div><p class="eyebrow">03 / HIJABS</p><h2>Bamboo Hijabs</h2><p>Soft, breathable everyday essentials with an elegant drape.</p></div>
+      <span>$20 CAD</span>
+    </div>
+    <div class="product-grid">
+      <article class="product-card" data-product="Bamboo Hijab" data-color="Dark Brown" data-price="20" data-image="images/hijab-brown.jpeg">
+        <div class="image-wrap"><img src="images/hijab-brown.jpeg" alt="Bamboo Hijab Dark Brown"></div><h3>Bamboo Hijab</h3><p>Dark Brown</p><strong>$20 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Bamboo Hijab" data-color="Mauve" data-price="20" data-image="images/hijab-mauve.jpeg">
+        <div class="image-wrap"><img src="images/hijab-mauve.jpeg" alt="Bamboo Hijab Mauve"></div><h3>Bamboo Hijab</h3><p>Mauve</p><strong>$20 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Bamboo Hijab" data-color="Navy Blue" data-price="20" data-image="images/hijab-navy.jpeg">
+        <div class="image-wrap"><img src="images/hijab-navy.jpeg" alt="Bamboo Hijab Navy Blue"></div><h3>Bamboo Hijab</h3><p>Navy Blue</p><strong>$20 CAD</strong>
+      </article>
+      <article class="product-card" data-product="Bamboo Hijab" data-color="Black" data-price="20" data-image="images/hijab-black.jpeg">
+        <div class="image-wrap"><img src="images/hijab-black.jpeg" alt="Bamboo Hijab Black"></div><h3>Bamboo Hijab</h3><p>Black</p><strong>$20 CAD</strong>
+      </article>
+    </div>
+  </section>
+</main>
 
-<script>
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
- const f=btn.dataset.filter;document.querySelectorAll('#abayas .product').forEach(p=>p.style.display=(f==='all'||p.dataset.kind===f)?'block':'none');
-}));
-</script>
-</body></html>
+<footer><div class="logo">LIYRAH<span>MODESTY REFINED</span></div><p>Modest essentials for the modern woman.</p><small>© 2026 LIYRAH. All rights reserved.</small></footer>
+
+<!-- Product detail -->
+<div class="modal-backdrop" id="productBackdrop"></div>
+<section class="product-modal" id="productModal" aria-hidden="true">
+  <button class="close-modal" id="closeProduct" aria-label="Close">×</button>
+  <div class="detail-layout">
+    <div class="gallery">
+      <div class="main-photo">
+        <button class="slide-arrow prev" id="prevPhoto" aria-label="Previous photo">‹</button>
+        <img id="detailImage" src="" alt="">
+        <button class="zoom-hint" id="zoomPhoto">⌕ ZOOM</button>
+        <button class="slide-arrow next" id="nextPhoto" aria-label="Next photo">›</button>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="product-info">
+      <p class="eyebrow">LIYRAH</p>
+      <h2 id="detailName"></h2>
+      <p class="detail-color" id="detailColor"></p>
+      <p class="detail-price" id="detailPrice"></p>
+      <label>Quantity
+        <select id="quantity"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+      </label>
+      <button class="add-cart" id="addCart">ADD TO CART</button>
+      <p class="shipping-note">Prices shown in CAD.</p>
+    </div>
+  </div>
+  <div class="description">
+    <p class="eyebrow">PRODUCT DETAILS</p>
+    <h3>Description</h3>
+    <div id="detailDescription"></div>
+  </div>
+</section>
+
+<!-- Fullscreen zoom -->
+<div class="zoom-view" id="zoomView">
+  <button id="closeZoom" aria-label="Close zoom">×</button>
+  <img id="zoomImage" src="" alt="Zoomed product photo">
+</div>
+
+<!-- Cart -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h2>Your Cart</h2><button id="closeCart">×</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-total">Total <strong id="cartTotal">$0 CAD</strong></div>
+  <button class="checkout">CHECKOUT</button>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,26 +1,27 @@
-LIYRAH WEBSITE — PRODUCT PHOTO UPDATE
+LIYRAH UPDATED WEBSITE
 
-This version uses the exact product photos uploaded in ChatGPT.
+Included:
+- Exact uploaded two-model hero image.
+- Clickable Sereen, Elara and Bamboo Hijab product cards.
+- Product-detail view with description at the bottom.
+- Add to Cart with quantity and persistent cart (localStorage).
+- Product slideshow with arrows/thumbnails.
+- Click-to-zoom on the main/first product image.
+- Mobile responsive layout.
+- Sereen/Elara: $70 CAD. Bamboo Hijabs: $20 CAD.
 
-Products:
-- Sereen Abaya — $70.00 CAD
-- Elara Abaya — $70.00 CAD
-- Liyrah Hijabs — $20.00 CAD
+IMPORTANT PRODUCT IMAGE FILENAMES
+Keep/add your existing product photos inside /images using:
+sereen-brown.jpeg, sereen-mauve.jpeg, sereen-navy.jpeg, sereen-black.jpeg
+elara-brown.jpeg, elara-mauve.jpeg, elara-navy.jpeg, elara-black.jpeg
+hijab-brown.jpeg, hijab-mauve.jpeg, hijab-navy.jpeg, hijab-black.jpeg
 
-Colours:
-Dark Brown / Mauve / Navy Blue / Black
-
-DEPLOY TO NETLIFY
-1. Unzip this folder.
-2. In Netlify, deploy the whole Liyrah_Website_With_Product_Photos folder
-   (or drag the ZIP into Netlify's manual deploy area).
-3. index.html must stay at the root and the images folder must stay beside it.
-
-The site is responsive and includes:
-- Homepage hero using an uploaded Sereen photo
-- Sereen, Elara and Hijab category cards
-- 8 abaya product variants
-- 4 hijab product variants
-- Product filtering
-- Liyrah cream / espresso / mauve styling
-- Netlify-compatible newsletter form
+OPTIONAL SLIDESHOW IMAGES
+For each colour, you can add:
+-45.jpeg
+-back.jpeg
+-detail.jpeg
+-fabric.jpeg
+-lifestyle.jpeg
+Example: sereen-brown-45.jpeg, sereen-brown-back.jpeg, etc.
+The website automatically detects these images and adds them to the slideshow.
