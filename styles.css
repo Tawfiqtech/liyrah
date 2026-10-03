@@ -141,3 +141,22 @@
 .description p{line-height:1.7}
 .description ul{padding-left:20px;line-height:1.55}
 .description h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:28px 0 10px}
+
+/* Final hero/header refinements */
+.hero-dots{display:none!important}
+.hero-content{top:44%!important;transform:translate(-50%,-18%)!important}
+@media (max-width:760px){
+  .hero-content{top:45%!important;transform:translate(-50%,-16%)!important}
+}
+@media (max-width:430px){
+  .hero-content{top:43%!important;transform:translate(-50%,-12%)!important}
+}
+/* Always show the cart as an icon, including laptop/desktop */
+@media (min-width:761px){
+  .header-left{visibility:visible}
+  .bag-icon{width:34px!important;padding-left:0!important}
+  .bag-icon:before{display:block!important}
+  .bag-icon:after{display:block!important}
+  .bag-icon #cartCount{position:absolute!important;right:-8px!important;top:-7px!important;background:#2a1d17!important;color:#fff!important;border-radius:50%!important;font-size:11px!important;line-height:22px!important;width:22px!important;height:22px!important}
+  .bag-icon #cartCount:before{content:none!important}
+}
