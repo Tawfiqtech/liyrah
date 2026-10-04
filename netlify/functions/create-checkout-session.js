@@ -24,8 +24,20 @@ exports.handler = async (event) => {
     params.set("cancel_url", `${siteUrl}/#shop`);
     params.set("billing_address_collection", "required");
     params.set("shipping_address_collection[allowed_countries][0]", "CA");
-    params.set("shipping_address_collection[allowed_countries][1]", "US");
     params.set("phone_number_collection[enabled]", "true");
+
+    // Canada shipping: $12 CAD flat rate, free on merchandise totals of $150+ CAD.
+    const merchandiseTotal = cart.reduce((total, item) => {
+      const product = PRODUCTS[item.name];
+      if (!product) throw new Error(`Unknown product: ${item.name}`);
+      const qty = Math.max(1, Math.min(20, Number.parseInt(item.qty, 10) || 1));
+      return total + product.unitAmount * qty;
+    }, 0);
+    const shippingAmount = merchandiseTotal >= 15000 ? 0 : 1200;
+    params.set("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
+    params.set("shipping_options[0][shipping_rate_data][fixed_amount][amount]", String(shippingAmount));
+    params.set("shipping_options[0][shipping_rate_data][fixed_amount][currency]", "cad");
+    params.set("shipping_options[0][shipping_rate_data][display_name]", shippingAmount === 0 ? "Free Shipping" : "Standard Shipping");
     params.set("metadata[brand]", "LIYRAH");
 
     const summary = [];
