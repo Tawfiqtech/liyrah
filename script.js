@@ -1,10 +1,10 @@
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const productData={
  "Sereen Abaya":{
-  description:`<p>Crafted from soft Korean Nida fabric, the Sereen Abaya has a relaxed, modest fit designed for graceful everyday wear.</p><ul><li>Soft Korean Nida fabric</li><li>Relaxed, modest fit</li><li>Side pockets</li><li>Matching chiffon hijab included</li><li>8-inch zip down the chest</li></ul>`
+  description:`<p>The Elara Abaya is designed with a wide straight-cut body and statement sleeves for an elegant, flowing silhouette.</p><ul><li>16-inch wide sleeves</li><li>Wide body, straight cut (31–32 inch)</li><li>Press buttons inside sleeves</li><li>1 hidden side pocket</li><li>8-inch zip down the chest</li><li>Our branded Premium Soft Chiffon Hijab included</li><li>Korean Nida fabric</li></ul>`
  },
  "Elara Abaya":{
-  description:`<p>The Elara Abaya is designed with a wide straight-cut body and statement sleeves for an elegant, flowing silhouette.</p><ul><li>16-inch wide sleeves</li><li>Wide body, straight cut (31–32 inch)</li><li>Press buttons inside sleeves</li><li>1 hidden side pocket</li><li>8-inch zip down the chest</li><li>Our branded Premium Soft Chiffon Hijab included</li><li>Korean Nida fabric</li></ul>`
+  description:`<p>Crafted from soft Korean Nida fabric, the Sereen Abaya has a relaxed, modest fit designed for graceful everyday wear.</p><ul><li>Soft Korean Nida fabric</li><li>Relaxed, modest fit</li><li>Side pockets</li><li>Matching chiffon hijab included</li><li>8-inch zip down the chest</li></ul>`
  },
  "Bamboo Hijab":{
   description:`<p>Our Bamboo Jersey hijab combines soft stretch, comfortable coverage and a skin-friendly feel for everyday wear.</p><ul><li>Material: 95% bamboo + 5% spandex</li><li>GSM: 150G/ml</li><li>Texture: soft, good stretch, natural and skin-friendly</li><li>Thickness: thick</li><li>Edge: hem wrapped stitching</li><li>Stock size: 70 × 180 cm</li></ul><h4>Care Information</h4><p>Machine wash cold (30°C) on a gentle cycle. Air dry flat or hang dry.</p>`
@@ -55,6 +55,21 @@ $("#prevPhoto").onclick=()=>{photoIndex=(photoIndex-1+photos.length)%photos.leng
 $("#nextPhoto").onclick=()=>{photoIndex=(photoIndex+1)%photos.length;renderGallery()};
 $("#detailImage").onclick=showZoom;$("#zoomPhoto").onclick=showZoom;$("#closeZoom").onclick=()=>$("#zoomView").classList.remove("open");$("#zoomView").onclick=e=>{if(e.target.id==="zoomView"||e.target.id==="zoomImage")$("#zoomView").classList.remove("open")};
 $("#addCart").onclick=addToCart;$("#bagBtn").onclick=openCart;$("#closeCart").onclick=closeCart;$("#cartOverlay").onclick=closeCart;
+const checkoutBtn=$("#checkoutBtn");
+checkoutBtn.onclick=async()=>{
+ if(!cart.length)return;
+ const errorEl=$("#checkoutError"); errorEl.style.display="none";
+ const oldText=checkoutBtn.textContent; checkoutBtn.disabled=true; checkoutBtn.textContent="LOADING…";
+ try{
+  const res=await fetch("/.netlify/functions/create-checkout-session",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({cart:cart.map(({name,color,qty})=>({name,color,qty}))})});
+  const data=await res.json();
+  if(!res.ok||!data.url)throw new Error(data.error||"Unable to start checkout.");
+  window.location.href=data.url;
+ }catch(err){
+  errorEl.textContent=err.message+" Please try again."; errorEl.style.display="block";
+  checkoutBtn.disabled=false; checkoutBtn.textContent=oldText;
+ }
+};
 $("#menuBtn").onclick=()=>$("#nav").classList.toggle("open"); $$("#nav a").forEach(a=>a.onclick=()=>$("#nav").classList.remove("open"));
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeProduct();closeCart();$("#zoomView").classList.remove("open")}});
 renderCart();

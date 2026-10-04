@@ -1,0 +1,20 @@
+LIYRAH — STRIPE TEST CHECKOUT SETUP
+
+The website is already connected to these Stripe sandbox Price IDs:
+Sereen Abaya: price_1UMLX4PI3wfDr96NkaAtFjBF
+Elara Abaya: price_1UMLWYPI3wfDr96N1K6vj3jD
+Bamboo Hijab: price_1UMLXEPI3wfDr96N4UjkEM7b
+
+NETLIFY SETUP
+1. Deploy this folder/ZIP to your Liyrah Netlify site.
+2. In Netlify, open Site configuration / Project configuration > Environment variables.
+3. Add an environment variable named exactly: STRIPE_SECRET_KEY
+4. Set its value to your Stripe SANDBOX secret key (sk_test_...). Never put this key in script.js or HTML.
+5. Trigger a new deploy after saving the environment variable.
+6. Add an item to the cart and click CHECKOUT.
+7. Test payment with Stripe's sandbox test card details from your Stripe test environment.
+
+IMPORTANT
+- This build uses sandbox/test Price IDs. Do not switch Stripe to live payments until live Price IDs and a live secret key are configured.
+- Checkout currently collects billing address, phone number, and shipping address for Canada/USA.
+- Product price IDs are validated server-side in the Netlify Function so browser-submitted prices cannot override Stripe pricing.
