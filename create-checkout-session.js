@@ -41,8 +41,8 @@ exports.handler = async (event) => {
 
       params.set(`line_items[${i}][price_data][currency]`, "cad");
       params.set(`line_items[${i}][price_data][unit_amount]`, String(unitAmount));
-      params.set(`line_items[${i}][price_data][product_data][name]`, item.name);
-      params.set(`line_items[${i}][price_data][product_data][description]`, variant);
+      params.set(`line_items[${i}][price_data][product_data][name]`, `${item.name} — ${variant}`);
+      params.set(`line_items[${i}][price_data][product_data][description]`, isAbaya ? `Selected colour: ${color} | Selected size: ${size}` : `Selected colour: ${color}`);
       params.set(`line_items[${i}][quantity]`, String(qty));
       summary.push(`${item.name} (${variant}) x${qty}`);
     });
