@@ -1,7 +1,7 @@
-const PRICE_IDS = {
-  "Sereen Abaya": "price_1UMLX4PI3wfDr96NkaAtFjBF",
-  "Elara Abaya": "price_1UMLWYPI3wfDr96N1K6vj3jD",
-  "Bamboo Hijab": "price_1UMLXEPI3wfDr96N4UjkEM7b"
+const PRODUCTS = {
+  "Sereen Abaya": { unitAmount: 7000 },
+  "Elara Abaya": { unitAmount: 7000 },
+  "Bamboo Hijab": { unitAmount: 2000 }
 };
 
 exports.handler = async (event) => {
@@ -15,10 +15,13 @@ exports.handler = async (event) => {
       return { statusCode: 400, body: JSON.stringify({ error: "Your cart is empty." }) };
     }
 
+    console.log("LIYRAH_CART_VARIANTS", JSON.stringify(cart.map(({name,color,size,qty}) => ({name,color,size,qty}))));
+
     const params = new URLSearchParams();
     params.set("mode", "payment");
-    params.set("success_url", `${process.env.URL || "https://liyrah.netlify.app"}/success.html?session_id={CHECKOUT_SESSION_ID}`);
-    params.set("cancel_url", `${process.env.URL || "https://liyrah.netlify.app"}/#shop`);
+    const siteUrl = process.env.URL || "https://liyrah.netlify.app";
+    params.set("success_url", `${siteUrl}/success.html?session_id={CHECKOUT_SESSION_ID}`);
+    params.set("cancel_url", `${siteUrl}/#shop`);
     params.set("billing_address_collection", "required");
     params.set("shipping_address_collection[allowed_countries][0]", "CA");
     params.set("shipping_address_collection[allowed_countries][1]", "US");
@@ -27,12 +30,21 @@ exports.handler = async (event) => {
 
     const summary = [];
     cart.forEach((item, i) => {
-      const price = PRICE_IDS[item.name];
+      const product = PRODUCTS[item.name];
+      if (!product) throw new Error(`Unknown product: ${item.name}`);
+
       const qty = Math.max(1, Math.min(20, Number.parseInt(item.qty, 10) || 1));
-      if (!price) throw new Error(`Unknown product: ${item.name}`);
-      params.set(`line_items[${i}][price]`, price);
+      const isAbaya = item.name === "Sereen Abaya" || item.name === "Elara Abaya";
+      const allowedSizes = new Set(["52", "54", "56", "58"]);
+      const size = isAbaya && allowedSizes.has(String(item.size)) ? String(item.size) : null;
+      const color = String(item.color || "Default").replace(/[<>]/g, "").trim().slice(0, 50);
+      const variantName = `${item.name} — ${color}${size ? ` — Size ${size}` : ""}`;
+
+      params.set(`line_items[${i}][price_data][currency]`, "cad");
+      params.set(`line_items[${i}][price_data][unit_amount]`, String(product.unitAmount));
+      params.set(`line_items[${i}][price_data][product_data][name]`, variantName);
       params.set(`line_items[${i}][quantity]`, String(qty));
-      summary.push(`${item.name} (${item.color || "Default"}${item.size ? `, Size ${item.size}` : ""}) x${qty}`);
+      summary.push(`${variantName} x${qty}`);
     });
     params.set("metadata[cart_details]", summary.join(" | ").slice(0, 500));
 
@@ -44,11 +56,21 @@ exports.handler = async (event) => {
       },
       body: params.toString()
     });
+
     const session = await response.json();
     if (!response.ok || !session.url) throw new Error(session?.error?.message || "Unable to start checkout.");
 
-    return { statusCode: 200, headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: session.url }) };
+    return {
+      statusCode: 200,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: session.url })
+    };
   } catch (err) {
-    return { statusCode: 400, headers: { "Content-Type": "application/json" }, body: JSON.stringify({ error: err.message }) };
+    console.error("LIYRAH_CHECKOUT_ERROR", err.message);
+    return {
+      statusCode: 400,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ error: err.message })
+    };
   }
 };
