@@ -23,7 +23,9 @@ async function openProduct(card){
  const tested=await Promise.all(candidatePhotos(current.name,current.color,current.image).map(validImage));
  photos=tested.filter(Boolean); if(!photos.length) photos=[current.image]; photoIndex=0;
  $("#detailName").textContent=current.name; $("#detailColor").textContent=current.color; $("#detailPrice").textContent=`$${current.price} CAD`;
- $("#detailDescription").innerHTML=productData[current.name].description; $("#quantity").value="1"; renderGallery();
+ $("#detailDescription").innerHTML=productData[current.name].description; $("#quantity").value="1";
+ const isAbaya=current.name==="Sereen Abaya"||current.name==="Elara Abaya";
+ $("#sizeLabel").style.display=isAbaya?"block":"none"; if(isAbaya) $("#size").value="52"; renderGallery();
  $("#productBackdrop").classList.add("open"); $("#productModal").classList.add("open"); $("#productModal").setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
 }
 function renderGallery(){
@@ -36,14 +38,16 @@ function closeProduct(){ $("#productBackdrop").classList.remove("open");$("#prod
 function showZoom(){ $("#zoomImage").src=photos[photoIndex];$("#zoomView").classList.add("open")}
 function addToCart(){
  const q=+$("#quantity").value;
- const found=cart.find(x=>x.name===current.name&&x.color===current.color);
- if(found) found.qty+=q; else cart.push({...current,qty:q});
+ const isAbaya=current.name==="Sereen Abaya"||current.name==="Elara Abaya";
+ const size=isAbaya?$("#size").value:null;
+ const found=cart.find(x=>x.name===current.name&&x.color===current.color&&(x.size||null)===size);
+ if(found) found.qty+=q; else cart.push({...current,size,qty:q});
  saveCart(); closeProduct(); openCart();
 }
 function saveCart(){localStorage.setItem("liyrahCart",JSON.stringify(cart));renderCart()}
 function renderCart(){
  $("#cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);
- $("#cartItems").innerHTML=cart.length?cart.map((x,i)=>`<div class="cart-item"><img src="${x.image}" alt=""><div><strong>${x.name}</strong><p>${x.color}</p><p>Qty: ${x.qty}</p></div><div>$${x.price*x.qty}<br><button data-remove="${i}" style="border:0;background:none;text-decoration:underline;cursor:pointer;margin-top:8px">Remove</button></div></div>`).join(""):"<p>Your cart is empty.</p>";
+ $("#cartItems").innerHTML=cart.length?cart.map((x,i)=>`<div class="cart-item"><img src="${x.image}" alt=""><div><strong>${x.name}</strong><p>${x.color}</p>${x.size?`<p>Size: ${x.size}</p>`:""}<p>Qty: ${x.qty}</p></div><div>$${x.price*x.qty}<br><button data-remove="${i}" style="border:0;background:none;text-decoration:underline;cursor:pointer;margin-top:8px">Remove</button></div></div>`).join(""):"<p>Your cart is empty.</p>";
  $("#cartTotal").textContent=`$${cart.reduce((s,x)=>s+x.price*x.qty,0)} CAD`;
  $$("[data-remove]").forEach(b=>b.onclick=()=>{cart.splice(+b.dataset.remove,1);saveCart()});
 }
@@ -61,7 +65,7 @@ checkoutBtn.onclick=async()=>{
  const errorEl=$("#checkoutError"); errorEl.style.display="none";
  const oldText=checkoutBtn.textContent; checkoutBtn.disabled=true; checkoutBtn.textContent="LOADING…";
  try{
-  const res=await fetch("/.netlify/functions/create-checkout-session",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({cart:cart.map(({name,color,qty})=>({name,color,qty}))})});
+  const res=await fetch("/.netlify/functions/create-checkout-session",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({cart:cart.map(({name,color,size,qty})=>({name,color,size,qty}))})});
   const data=await res.json();
   if(!res.ok||!data.url)throw new Error(data.error||"Unable to start checkout.");
   window.location.href=data.url;

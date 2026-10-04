@@ -32,7 +32,7 @@ exports.handler = async (event) => {
       if (!price) throw new Error(`Unknown product: ${item.name}`);
       params.set(`line_items[${i}][price]`, price);
       params.set(`line_items[${i}][quantity]`, String(qty));
-      summary.push(`${item.name} (${item.color || "Default"}) x${qty}`);
+      summary.push(`${item.name} (${item.color || "Default"}${item.size ? `, Size ${item.size}` : ""}) x${qty}`);
     });
     params.set("metadata[cart_details]", summary.join(" | ").slice(0, 500));
 
